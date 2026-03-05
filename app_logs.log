@@ -1,4 +1,0 @@
-2026-03-05 13:04:47,804 - INFO - GET / Status: 404 0.0000s
-2026-03-05 13:04:48,101 - INFO - GET /favicon.ico Status: 404 0.0000s
-2026-03-05 13:05:18,707 - INFO - Health check endpoint accessed
-2026-03-05 13:05:18,708 - INFO - GET /health Status: 200 0.0030s
