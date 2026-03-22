@@ -1,12 +1,14 @@
 from fastapi import FastAPI
-import os
+
+from app.middleware import logging_middleware
+from app.api.health import router as health_router
+from app.api.tasks import router as tasks_router
+from app.api.notes import router as notes_router
 
 app = FastAPI(title="TaskFlow API")
 
-@app.get("/health")
-def health():
-    return {
-        "status": "ok",
-        "environment": os.getenv("ENVIRONMENT", "development"),
-        "version": "1.0.2"
-    }
+app.middleware("http")(logging_middleware.log_requests)
+
+app.include_router(health_router)
+app.include_router(tasks_router)
+app.include_router(notes_router)
