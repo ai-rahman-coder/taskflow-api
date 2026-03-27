@@ -8,6 +8,7 @@ class NoteCreate(BaseModel):
     content: Optional[str] = Field(None, max_length=300)
 
 class NoteResponse(BaseModel):
+    owner_id: int
     id: int
     title: str
     content: Optional[str] = None
